@@ -1,7 +1,7 @@
 socket-kinda-ntp
 ==========
 
-Synchronizes time between a client and server using websockets and something similar to NTP. 
+Synchronizes time between a client and server using websockets and something kinda like NTP. 
 
 ## Installation
 
@@ -36,7 +36,7 @@ io.sockets.on('connection', function (socket) {
 });
 ```
 
-### License
+## License
 
 (The MIT License)
 

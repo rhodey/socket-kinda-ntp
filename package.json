@@ -1,8 +1,8 @@
 {
   "name": "socket-kinda-ntp",
-  "version": "0.1",
+  "version": "0.0.1",
   "main": "server/socket-kinda-ntp",
-  "description": "Synchronizes time between a client and server using websockets and something similar to NTP.",
+  "description": "Synchronizes time between a client and server using websockets and something kinda like NTP.",
   "keywords": ["time", "synchronize", "kinda", "ntp", "socket", "socket.io"],
   "author": "rhodey <rhodey@anhonesteffort.org>",
   "devDependencies": {
