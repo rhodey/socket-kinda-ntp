@@ -24,6 +24,9 @@
   };
   
   kinda_ntp.resync = function() {
+    time_sync_index = 0;
+    time_sync_array = [];
+    clearInterval(interval_handle);
     interval_handle = setInterval(function() {
       if(time_sync_index < (time_sync_count - 1))
         iosocket.emit('kinda:get_time', Date.now());
