@@ -4,8 +4,10 @@
   var time_sync_interval = 500;
   var time_sync_count = 5;
   var time_sync_array = new Array();
-  var time_sync_correction = 0;
-  var time_sync_round_trip = 0;
+  // note the sync time is stored in corrected server time, not client time.
+  var last_sync_time = localStorage.ntpLastSync || 0;
+  var time_sync_correction = localStorage.ntpLastOffset || 0;
+  var time_sync_round_trip = localStorage.ntpLastRoundTrip || Infinity;
 
   var iosocket = null;
   var interval_handle = null;
@@ -24,6 +26,10 @@
     }
     time_sync_correction = (offset_total / i);
     time_sync_round_trip = (rt_total / i);
+
+    last_sync_time = localStorage.ntpLastSync = kinda_ntp.time();
+    localStorage.ntpLastOffset = time_sync_correction;
+    localStorage.ntpLastRoundTrip = time_sync_round_trip;
   };
   
   kinda_ntp.resync = function() {
