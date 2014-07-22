@@ -60,7 +60,15 @@
   kinda_ntp.time = function get_time() {
     return Date.now() + time_sync_correction;
   }
-  
+
+  kinda_ntp.offset = function() {
+    return time_sync_correction;
+  };
+
+  kinda_ntp.round_trip = function() {
+    return time_sync_round_trip;
+  };
+
   if(typeof define === 'function' && define.amd) {
     define('kinda_ntp', [], function() {
       return kinda_ntp;
